@@ -1,0 +1,167 @@
+﻿@model Paginate<Product> 
+
+
+<link rel="stylesheet" asp-append-version="true" href="~/MemberPanel/assets/css/shop.css">
+
+<link rel="stylesheet" href="~/MemberPanel/assets/sass/home.css">
+<link rel="stylesheet" href="~/MemberPanel/assets/css/home.css">
+<link rel="stylesheet" href="~/MemberPanel/assets/sass/blog.css">
+<link rel="stylesheet" href="~/MemberPanel/assets/css/blog.css">
+
+<main>
+
+    <section id="background-potatoes">
+        <div class="background-potatoes">
+            <div class="img">
+                <img src="~/MemberPanel/assets/img/potatoes-background.jpeg" style="width: 100%;height: 100%;" alt="">
+
+            </div>
+            <div class="name">
+                <p>Organi Shop</p>
+                <span> <a asp-controller="Home" asp-action="HomePage"> <strong>Home</strong> </a> --> Shop </span>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <section>
+        <div class="filter-product">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="filter">
+                            <div class="cate">
+                                <p>
+                                    Categories
+                                </p>
+
+                               
+                                @await Component.InvokeAsync("CategoryList")
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-9 col-sm-12">
+
+                        <div class="sale-off">
+                            <p>Sale Off</p>
+                        </div>
+
+                        <div class="sale-products">
+                            <div class="owl-carousel owl-theme">
+
+                                @foreach (var item in Model.Datas)
+                                {
+                                    <div class="item" style="height:370px;" data-id="@item.Id">
+                                        <div class="picture">
+                                            <img src="~/AdminPanel/img/product/@item.Image" class="product__discount__item__pic set-bg" style="width: 100%;height: 100%;" alt="meat">
+                                            <div class="icons">
+                                                <div class="heart-icon">
+                                                    <a asp-action="FavoriteAdd" asp-controller="Home" asp-route-id="@item.Id" ><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="basket-icon">
+                                                    <a asp-action="BasketAdd" asp-controller="Home" asp-route-id="@item.Id" > <i class="fas fa-shopping-cart"></i></a>
+
+                                                </div>
+                                                <div class="detail-icon">
+                                                    <a asp-action="ProductDetailsPage" asp-controller="Product" asp-route-id="@item.Id"> <i class="fas fa-info"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="name">
+                                                <a asp-action="ProductDetailsPage" asp-controller="Product" asp-route-id="@item.Id">@item.Name</a>
+                                            </div>
+                                            <div class="price">
+                                                $@((int)(item.Price)/2)   <span>$@item.Price</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <hr style="color:rgba(0,0,0,0.4);">
+
+
+
+                        <div class="sort-by-product-count">
+                            <div class="product-count">
+                                <strong>@ViewBag.Count</strong> <span>Mehsul sayi</span>
+                            </div>
+                        </div>
+
+                        <div class="products">
+                            <div class="row">
+                                @foreach (var product in Model.Datas)
+                                {
+                                    <div class="col-lg-4 col-sm-12" data-id="@product.Id">
+                                        <div class="picture">
+                                            <img src="~/AdminPanel/img/product/@product.Image" style="width:100%;height:100%;" alt="banana">
+                                            <div class="icons">
+                                                <div class="heart-icon">
+                                                    <a asp-action="FavoriteAdd" asp-controller="Home" asp-route-id="@product.Id" ><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="basket-icon">
+                                                    <a asp-action="BasketAdd" asp-controller="Home" asp-route-id="@product.Id" > <i class="fas fa-shopping-cart"></i></a>
+                                                </div>
+                                                <div class="detail-icon">
+                                                    <a asp-action="ProductDetailsPage" asp-controller="Product" asp-route-id="@product.Id"> <i class="fas fa-info"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="name">
+                                                <a asp-action="ProductDetailsPage" asp-controller="Product" asp-route-id="@product.Id">@product.Name</a>
+                                            </div>
+                                            <div class="price">
+                                                $@product.Price
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+
+                        <div class="row my-3 justify-content-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination ">
+                                    <li class="page-item @(Model.HasPrevious ? "": "disabled")">
+                                        <a class="page-link"  asp-action="ShopPage" asp-controller="Product" asp-area=""
+                                        asp-route-page="@(Model.CurrentPage-1)"
+                                        >Evvelki</a>
+                                    </li>
+                                    @for (int i = 1; i <= Model.TotalPage; i++)
+                                    {
+                                        <li class="page-item @(i == Model.CurrentPage ? "disabled" : "")">
+                                            <a class="page-link" asp-action="ShopPage" asp-controller="Product" asp-area="" 
+                                  
+                                            asp-route-page="@i">@i</a>
+                                        </li>
+                                    }
+                                    <li class="page-item @(Model.HasNext ? "": "disabled")">
+                                        <a class="page-link" asp-action="ShopPage" asp-controller="Product" asp-area=""
+                                        asp-route-page="@(Model.CurrentPage+1)">Sonraki</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@section Scripts {
+    <script asp-append-version="true" src="~/MemberPanel/assets/js/shop.js"></script>
+     <script asp-append-version="true" src="~/MemberPanel/assets/js/blog.js"></script>
+}
+
+

@@ -1,0 +1,56 @@
+﻿@model List<Advert>
+
+@{
+    var count = 1;
+}
+
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4>Adverts</h4>
+                
+                   <div class="create-btn" style="display:flex; justify-content:flex-end;">
+                    <a asp-action="Create" asp-area="AdminPanel" asp-controller="Advert" class="btn btn-facebook">Create</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Tarix</th>
+                                <th>
+                                    EDIT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var dto in Model)
+                            {
+                <tr>
+                    <td>
+                        @count
+                    </td>
+                    <td class="py-1">
+                        <img src="~/AdminPanel/img/advert/@dto.Image" class="mr-2" alt="image">
+                    </td>
+                    <td>
+                        @dto.CreatedDate.ToString("dd MMM")
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-controller="Advert" asp-area="AdminPanel" asp-route-id="@dto.Id"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-action="Delete" asp-controller="Advert" asp-area="AdminPanel" asp-route-id="@dto.Id"><i class="bi bi-x-square"></i></a>
+                    </td>
+                </tr>count++;
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

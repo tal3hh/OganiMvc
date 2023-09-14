@@ -1,0 +1,216 @@
+﻿@model (Product dto,ProductDetail detaupdatedto ,List<Category> categories, List<Product> products)
+
+@{ int count = 1;  }
+
+@* Product *@
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mehsul'u Yenilemek</h4>
+                <form asp-action="Update" asp-controller="Product" asp-area="AdminPanel" class="form-sample" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <input type="hidden" asp-for="dto.Id"/>
+                                <label class="col-sm-3 col-form-label">Mehsul Adi :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Name" type="text" class="form-control" placeholder="Mehsul adini yazin..." />
+                                    <span asp-validation-for="@Model.dto.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kateqoriya :</label>
+                                <div class="col-sm-9">
+                                    <select asp-for="@Model.dto.CategoryId" class="form-control" asp-items="@(new SelectList(Model.categories,"Id","Name"))" >
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Qiymet :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Price" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.dto.Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Say :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Count" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.dto.Count" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Foto :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Photo" class="form-control" >
+                                    <span asp-validation-for="@Model.dto.Photo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <a asp-action="List" asp-controller="Product" asp-area="AdminPanel" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    if (Model.detaupdatedto != null)
+    {
+        <div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mehsul Detallari</h4>
+                <form asp-action="Update" asp-controller="ProductDetail" asp-area="AdminPanel" class="form-sample" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Ceki :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.detaupdatedto.Weight" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.detaupdatedto.Weight" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Reyting :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.detaupdatedto.StarCount" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.detaupdatedto.StarCount" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                 <label class="col-sm-3 col-form-label">Mehsul Haqqinda :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.detaupdatedto.Description" type="tel" class="form-control" />
+                                    <span asp-validation-for="@Model.detaupdatedto.Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <input type="hidden" asp-for="detaupdatedto.Id"/>
+                                <input type="hidden" asp-for="detaupdatedto.ProductId"/>
+                                <label class="col-sm-3 col-form-label">Aktiv? :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.detaupdatedto.Availability" type="checkbox" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <a asp-action="List" asp-controller="Product" asp-area="AdminPanel" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    }else
+    {
+        <div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mehsul Detallari</h4>
+                <p>
+                    Bu mehsulun detallari elave edilmeyib...
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    }
+}
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mehsul'a Baxis</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No.
+                                </th>
+                                <th>
+                                    Mehsul
+                                </th>
+                                <th>
+                                    Foto
+                                </th>
+                                <th>
+                                    Kateq.
+                                </th>
+                                <th>
+                                    Qiymet
+                                </th>
+                                <th>
+                                    Say
+                                </th>
+                                <th>
+                                    EDIT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var productDto in Model.products.Take(5))
+                            {
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @productDto.Name
+                                    </td>
+                                    <td class="py-1">
+                                        <img src="~/AdminPanel/img/product/@productDto.Image" class="mr-2" alt="image">
+                                    </td>
+                                    <td>
+                                        @productDto.Category.Name
+                                    </td>
+                                    <td>
+                                        @productDto.Price $
+                                    </td>
+                                    <td>
+                                        @productDto.Count ed.
+                                    </td>
+                                    <td>
+                                        <a asp-action="Details" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-card-list"></i></a>
+                                        <a asp-action="Update" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-pencil-square"></i></a>
+                                        <a asp-action="Delete" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-x-square"></i></a>
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+﻿@model Paginate<Product>
+
+@{ 
+    int count = 1;
+  
+    if (Model.CurrentPage>1)
+    {
+        count = ((Model.CurrentPage - 1) * 15) + 1;
+    }
+}
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4>Mehsullar</h4>
+                  <div class="search-field ml-4 d-none d-md-block text-white" style="background: #495057d6;width:20%;height:40px;">
+                     <form class="d-flex align-items-stretch h-100" asp-action="List" asp-controller="Product" asp-area="AdminPanel">
+                         <div class="input-group">
+                             <input type="search" name="search" class="form-control bg-transparent border-0" placeholder="Mehsul'u axtarin...">
+                             <div class="input-group-addon bg-transparent border-0 search-button">
+                                 <button type="button" class="btn btn-sm bg-transparent px-0" style="color: #19f503;">
+                                     <i class="mdi mdi-magnify"></i>
+                                 </button>
+                             </div>
+                         </div>
+                     </form>
+                 </div>
+                   <div class="create-btn" style="display:flex; justify-content:flex-end;">
+                    <a asp-action="Create" asp-area="AdminPanel" asp-controller="Product" class="btn btn-facebook">Create</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>
+                                    Mehsul
+                                </th>
+                                <th>
+                                    Foto
+                                </th>
+                                <th>
+                                    Kateqor.
+                                </th>
+                                <th>
+                                    <a asp-action="List"
+                                       asp-route-sort="@ViewBag.Price"
+                                       asp-route-page="@Model.CurrentPage"
+                                       class="text-black">
+                                        Qiymet.<i class="bi bi-funnel-fill"></i>
+                                    </a>
+                                </th>
+                                 <th>
+                                    Ceki
+                                </th>
+                                <th>
+                                    <a asp-action="List"
+                                       asp-route-sort="@ViewBag.Count"
+                                       asp-route-page="@Model.CurrentPage"
+                                       class="text-black">
+                                        Say.<i class="bi bi-funnel-fill"></i>
+                                    </a>
+                                </th>
+                                
+                                <th>EDIT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var productDto in Model.Datas)
+                            {
+                <tr>
+                    <td>
+                        @count
+                    </td>
+                    <td>
+                        @productDto.Name
+                    </td>
+                    <td class="py-1">
+                        <img src="~/AdminPanel/img/product/@productDto.Image" class="mr-2" alt="image">
+                    </td>
+                    <td>
+                        @productDto.Category?.Name
+                    </td>
+                    <td>
+                        @productDto.Price $
+                    </td>
+                     <td>
+                        @(productDto.ProductDetails?.Weight == null? "---" : productDto.ProductDetails.Weight)
+                    </td>
+                    <td>
+                        @productDto.Count ed.
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-card-list"></i></a>
+                        <a asp-action="Update" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-action="Delete" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-x-square"></i></a>
+                    </td>
+                </tr>count++;
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="row my-3 justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination ">
+                                <li class="page-item @(Model.HasPrevious ? "": "disabled")">
+                                    <a class="page-link" style="color:black;" asp-action="List" asp-area="AdminPanel"
+                                       asp-route-sort="@((string)TempData["sort"] != null? (string)TempData["sort"] : "")"
+                                       asp-route-page="@(Model.CurrentPage-1)">Evvelki</a>
+                                </li>
+                                @for (int i = 1; i <= Model.TotalPage; i++)
+                                {
+                                    <li class="page-item @(i == Model.CurrentPage ? "disabled" : "")">
+                                        <a class="page-link" asp-action="List" asp-area="AdminPanel"
+                                           asp-route-sort="@((string)TempData["sort"] != null? (string)TempData["sort"] : "")" 
+                                           asp-route-page="@i">@i</a>
+                                    </li>
+                                }
+                                <li class="page-item @(Model.HasNext ? "": "disabled")">
+                                    <a class="page-link" style="color:black;" asp-action="List" asp-area="AdminPanel"
+                                       asp-route-sort="@((string)TempData["sort"] != null? (string)TempData["sort"] : "")"
+                                       asp-route-page="@(Model.CurrentPage+1)">Sonraki</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+        </div>
+    </div>
+</div>

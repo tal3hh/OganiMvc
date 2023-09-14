@@ -1,0 +1,68 @@
+﻿@model List<AppUser>
+@{
+    var count = 1;
+}
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4>Istifadeciler</h4>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>
+                                    Istifadeci
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Tarix
+                                </th>
+                                <th>
+                                    Roles
+                                </th>
+                                 <th>
+                                    
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                <tr>
+                    <td>
+                        @count
+                    </td>
+                    <td>
+                        @item.UserName
+                    </td>
+                    
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.CreatedDate.ToString("dd MMM")
+                    </td>
+                    <td>
+                        <getUserInfo user-id="@item.Id"></getUserInfo>
+                    </td>
+
+                    <td>
+                        <a asp-action="AssignRole" asp-controller="User" asp-route-id="@item.Id">Rol Elave Et</a>
+                    </td>
+                </tr>count++;
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            </div>
+           </div>
+           </div>

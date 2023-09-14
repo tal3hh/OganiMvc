@@ -1,0 +1,24 @@
+﻿@model RoleAssignSendModel
+
+
+<form asp-action="AssignRole" asp-controller="User" asp-area="AdminPanel" method="post" >
+
+    <input type="hidden" asp-for="@Model.UserId"/>
+
+    <div class="list-group">
+        @for (int i = 0; i < Model.Roles?.Count; i++)
+        {
+            <input type="hidden" asp-for="@Model.Roles[i].RoleId"/>
+            <input type="hidden" asp-for="@Model.Roles[i].Name"/>
+            <label class="list-group-item">
+            <input class="form-check-input me-1" type="checkbox" asp-for="@Model.Roles[i].Exist"/>
+            @Model.Roles[i].Name
+        </label>
+        }
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>

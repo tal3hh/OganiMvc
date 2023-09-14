@@ -1,0 +1,137 @@
+﻿@model (List<Category> categories, List<Product> products)
+
+@{
+    var catcount = 1;
+    var procount = 1;
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Kateqoriyalar</h4>
+                <div class="create-btn" style="display:flex; justify-content:flex-end;">
+                    <a asp-action="Create" asp-area="AdminPanel" asp-controller="Category" class="btn btn-github">Create</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Kateqoriya
+                                </th>
+                                <th>
+                                    Mehsul sayi
+                                </th>
+                                <th>
+                                    Tarix
+                                </th>
+                                <th>
+                                    EDIT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.categories.Take(3))
+                            {
+                                <tr>
+                                    <td>
+                                        @catcount
+                                    </td>
+                                    <td class="py-1">
+                                     <img src="~/AdminPanel/img/category/@item.Image" class="mr-2" alt="image">
+                                     </td>
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.Products?.Count() ed.
+                                    </td>
+                                    <td >
+                                        @item.CreatedDate.ToString("MMM dd")
+                                    </td>
+                                    <td>
+                                        <a asp-action="Update" asp-controller="Category" asp-area="AdminPanel" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                                        <a asp-action="Delete" asp-controller="Category" asp-area="AdminPanel" asp-route-id="@item.Id"><i class="bi bi-x-square"></i></a>
+                                    </td>
+                                </tr>
+                                catcount++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* Product List *@
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4>Mehsullar</h4>
+                <div class="create-btn" style="display:flex; justify-content:flex-end;">
+                    <a asp-action="Create" asp-area="AdminPanel" asp-controller="Product" class="btn btn-facebook">Create</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Mehsul</th>
+                                <th>Image</th>
+                                <th>Kateqor.</th>
+                                <th>Qiymet</th>
+                                <th>Say</th>
+                                <th>EDIT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var productDto in Model.products.Take(5))
+                            {
+                <tr>
+                    <td>
+                        @procount
+                    </td>
+                    <td>
+                        <label class="badge badge-gradient-warning">@productDto.Name</label>
+                    </td>
+                    <td class="py-1">
+                        <img src="~/AdminPanel/img/product/@productDto.Image" class="mr-2" alt="image">
+                    </td>
+                    <td>
+                        @productDto.Category?.Name
+                    </td>
+                    <td>
+                        @productDto.Price $
+                    </td>
+                    <td>
+                        @productDto.Count ed
+                    </td>
+
+                    <td>
+                        <a asp-action="Details" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-card-list"></i></a>
+                        <a asp-action="Update" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-action="Delete" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-x-square"></i></a>
+                    </td>
+                </tr>
+                procount++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

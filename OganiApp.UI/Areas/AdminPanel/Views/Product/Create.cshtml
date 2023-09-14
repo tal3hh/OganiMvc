@@ -1,0 +1,240 @@
+﻿@model (Product dto, ProductDetail detail, List<Category> categories, List<Product> products, List<Product> prodetalist)
+
+@{ 
+    int count = 1;  
+    int detacount = 1;  
+}
+
+@* Product *@
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Mehsul Elave Etmek</h4>
+                <form asp-action="Create" asp-controller="Product" asp-area="AdminPanel" class="form-sample" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Mehsul Adi :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Name" type="text" class="form-control" placeholder="Mehsul adini yazin..." />
+                                    <span asp-validation-for="@Model.dto.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kateqoriya :</label>
+                                <div class="col-sm-9">
+                                    <select asp-for="@Model.dto.CategoryId" class="form-control" asp-items="@(new SelectList(Model.categories,"Id","Name"))" >
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Qiymet :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Price" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.dto.Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Say :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Count" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.dto.Count" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Foto :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="@Model.dto.Photo" class="form-control" >
+                                    <span asp-validation-for="@Model.dto.Photo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <a asp-action="List" asp-controller="Product" asp-area="AdminPanel" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mehsul'a Baxis</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <td>
+                                    Foto
+                                </td>
+                                <th>
+                                    Mehsul
+                                </th>
+                                <th>
+                                    Kateq.
+                                </th>
+                                <th>
+                                    Qiymet
+                                </th>
+                                <th>
+                                    Say
+                                </th>
+                                <th>
+                                    EDIT
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var productDto in Model.products.Take(5))
+                            {
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                     <td class="py-1">
+                                        <img src="~/AdminPanel/img/product/@productDto.Image" class="mr-2" alt="image">
+                                    </td>
+                                    <td>
+                                        @productDto.Name
+                                    </td>
+                                   
+                                    <td>
+                                        @productDto.Category?.Name
+                                    </td>
+                                    <td>
+                                        @productDto.Price $
+                                    </td>
+                                    <td>
+                                        @productDto.Count ed.
+                                    </td>
+                                    <td>
+                                        <a asp-action="Details" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-card-list"></i></a>
+                                        <a asp-action="Update" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-pencil-square"></i></a>
+                                        <a asp-action="Delete" asp-controller="Product" asp-area="AdminPanel" asp-route-id="@productDto.Id"><i class="bi bi-x-square"></i></a>
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* Product Details *@
+<div class="row">
+    <div class="col-md-5 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body d-flex flex-column">
+                <h4 class="card-title">Mehsul Detali Elave Etmek</h4>
+                <form asp-action="Create" asp-controller="ProductDetail" asp-area="AdminPanel" class="forms-sample" method="post">
+                    <div class="form-group row">
+                        <label asp-for="detail.ProductId" class="col-sm-3 col-form-label">Mehsul :</label>
+                        <div class="col-sm-9">
+                            <select asp-for="detail.ProductId" asp-items="@(new SelectList(Model.prodetalist,"Id","Name"))" class="form-control">
+                            </select>
+                            <span class="text-danger" asp-validation-for="detail.ProductId"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="detail.StarCount" class="col-sm-3 col-form-label">Reyting :</label>
+                        <div class="col-sm-9">
+                            <input asp-for="detail.StarCount" type="number" min="1" max="5" class="form-control" id="exampleInputEmail2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="detail.Weight" class="col-sm-3 col-form-label">Ceki :</label>
+                        <div class="col-sm-9">
+                            <input asp-for="detail.Weight" type="number" class="form-control" id="exampleInputEmail2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="detail.Description" class="col-sm-3 col-form-label">Haqqinda :</label>
+                        <div class="col-sm-9">
+                            <textarea asp-for="detail.Description" type="text" class="form-control" id="exampleInputEmail2">
+                            </textarea>
+                        </div>
+                         </div>
+                    <div class="form-group row">
+                             <label asp-for="detail.Availability" class="col-sm-3 col-form-label">Aktiv? :</label>
+                             <div class="col-sm-9">
+                             <input asp-for="detail.Availability" type="checkbox" class="form-control" id="exampleInputEmail2">
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <a asp-action="List" asp-controller="Product" asp-area="AdminPanel" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mehsul Detallari</h4>
+                <div class="mt-auto">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Mehsul</th>
+                                    <th>Aktiv?</th>
+                                    <th>Ceki</th>
+                                    <th>Reyting</th>
+                                    <th>EDIT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.products.Take(5))
+                                {
+                                    <tr>
+                                        <td>@detacount</td>
+                                        <td>@item.Name</td>
+                                        <td>
+                                            @if (item.ProductDetails?.Availability != null)
+                                            {
+                                                @(item.ProductDetails.Availability? "Movcuddur" : "Movcud Deyil")
+                                            }
+                                        </td>
+                                        <td>@(item.ProductDetails?.Weight == null? "---" : item.ProductDetails.Weight + "kq")</td>
+                                        <td>@(item.ProductDetails?.StarCount == null? "---" : item.ProductDetails.StarCount)</td>
+                                        <td>
+                                            <a asp-action="Update" asp-controller="ProductDetail" asp-area="AdminPanel" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                                            <a asp-action="Delete" asp-controller="ProductDetail" asp-area="AdminPanel" asp-route-id="@item.Id"><i class="bi bi-x-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    detacount++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

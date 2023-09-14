@@ -1,0 +1,164 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/AdminPanel/node_modules/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/AdminPanel/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="~/AdminPanel/node_modules/jquery-bar-rating/dist/themes/css-stars.css">
+    <link rel="stylesheet" href="~/AdminPanel/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/AdminPanel/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/AdminPanel/images/favicon.png" />
+    <!-- GetBootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+
+</head>
+
+
+
+<body>
+    <div class="container-scroller">
+
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" asp-action="Index" asp-controller="Dashboard" asp-area="AdminPanel"><img src="~/AdminPanel/images/logo.svg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" asp-action="Index" asp-controller="Dashboard" asp-area="AdminPanel"><img src="~/AdminPanel/images/logo-mini.svg" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-profile" id="profileDropdown" asp-action="HomePage" asp-controller="Home" asp-area="" data-toggle="dropdown" aria-expanded="false">
+                            <span class="d-none d-lg-inline">Home Page</span>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Dashboard" asp-area="AdminPanel">
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Category" asp-area="AdminPanel">
+                                <span class="menu-title">Kateqoriyalar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Product" asp-area="AdminPanel">
+                                <span class="menu-title">Mehsullar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Comment" asp-area="AdminPanel">
+                                <span class="menu-title">Mehsul Commentleri</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Blog" asp-area="AdminPanel">
+                                <span class="menu-title">Blog</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Owner" asp-area="AdminPanel">
+                                <span class="menu-title">Owner</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Advert" asp-area="AdminPanel">
+                                <span class="menu-title">Advert</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="List" asp-controller="Contact" asp-area="AdminPanel">
+                                <span class="menu-title">Contact</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="UserList" asp-controller="User" asp-area="AdminPanel">
+                                <span class="menu-title">Istifadeciler</span>
+                            </a>
+                        </li>
+                    </ul>
+                    @*<div class="sidebar-progress">
+                        <p>Total Sales</p>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p>50 Items sold</p>
+                    </div>
+                    <div class="sidebar-progress">
+                        <p>Customer Target</p>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p>200 Items sold</p>
+                    </div>
+                    <div class="wrapper upgrade-button">
+                        <a href="~/AdminPanel/https://www.bootstrapdash.com/product/purple-bootstrap-4-admin-template/" target="_blank" class="btn btn-lg btn-block purchase-button">Upgrade To Pro</a>
+                    </div>*@
+                </nav>
+                
+    
+                <!-- partial -->
+                <div class="content-wrapper">
+                   @RenderBody()
+                </div>
+                <!-- content-wrapper ends -->
+
+
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a href="~/AdminPanel/https://www.bootstrapdash.com/" target="_blank">Bootstrap Dash</a>. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- row-offcanvas ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+
+
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/AdminPanel/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/AdminPanel/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/AdminPanel/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/AdminPanel/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="~/AdminPanel/node_modules/chart.js/dist/Chart.min.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/AdminPanel/js/off-canvas.js"></script>
+    <script src="~/AdminPanel/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="~/AdminPanel/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+</body>
+
+</html>

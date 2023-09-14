@@ -1,0 +1,107 @@
+﻿@model Blog
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Blog</h4>
+
+                <form class="form-sample">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Mehsul Adi :</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control">
+                                        @Model.Title
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kateqoriya :</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control">
+                                        @Model.Owner?.Fullname
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Foto :</label>
+                                <div style="width:35%;height:35%;border-radius:100%;" class="col-sm-9">
+                                    <img src="~/AdminPanel/img/blog/@Model.Image" style="width:35%;height:35%;border-radius:100%;" class="mr-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <p class="card-description">
+                        Blog Detallari
+                    </p>
+                    @if (Model.BlogDetails != null)
+                    {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Blog Basliq :</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control">
+                                        @Model.Title
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tags :</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control">
+                                        @(Model.BlogDetails?.Tags == null? "---" : Model.BlogDetails.Tags)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kateq. Adi :</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control">
+                                        @(Model.BlogDetails.CategoryName == null? "---" : Model.BlogDetails.CategoryName)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Haqqinda :</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control">
+                                        @(Model.BlogDetails?.Description == null? "---" : Model.BlogDetails.Description)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }else
+                    {
+                        <p>
+                            Bu mehsulun detaillari yoxdur...
+                        </p>
+                    }
+                    
+                    
+                    <a asp-action="List" asp-controller="Blog" asp-area="AdminPanel" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
