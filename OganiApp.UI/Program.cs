@@ -6,6 +6,8 @@ using OganiApp.Data.Contexts;
 using OganiApp.Data.UniteOfWork;
 using OganiApp.Service.Extensions;
 using OganiApp.Service.Utilities.CustomDescriber;
+using Serilog;
+using Serilog.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,17 @@ builder.Services.AddFluentValidationAutoValidation();
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
+
+#region Serilog
+
+//Logger log = new LoggerConfiguration()
+//    .WriteTo.MSSqlServer(builder.Configuration["ConnectionStrings:Mssql"], "Logs",
+//    autoCreateSqlTable: true)
+//    .CreateLogger();
+
+//builder.Host.UseSerilog(log);
+#endregion
+
 
 #region Identity
 

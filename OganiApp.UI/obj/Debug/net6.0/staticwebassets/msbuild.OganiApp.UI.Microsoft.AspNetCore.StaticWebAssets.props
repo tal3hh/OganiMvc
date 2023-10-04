@@ -944,22 +944,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\blog\16197803-7f75-48b4-ba87-041bf140ac1d_qonaq2.jfif))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\blog\17ec8c3a-a86e-4fc0-aa33-306bef375191_language.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>OganiApp.UI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/OganiApp.UI</BasePath>
-      <RelativePath>AdminPanel/img/blog/17ec8c3a-a86e-4fc0-aa33-306bef375191_language.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\blog\17ec8c3a-a86e-4fc0-aa33-306bef375191_language.png))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\blog\192a3f7f-0d84-49ee-b64f-7b5d915ed3a1_yataq3.jfif))">
       <SourceType>Package</SourceType>
       <SourceId>OganiApp.UI</SourceId>
@@ -1295,22 +1279,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\owner\744feb20-23fc-4ac0-87fe-c7c069b3cd53_owner.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\owner\836e4f2a-f170-4edf-a7ed-c5bb4e80592c_breadcrumb.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>OganiApp.UI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/OganiApp.UI</BasePath>
-      <RelativePath>AdminPanel/img/owner/836e4f2a-f170-4edf-a7ed-c5bb4e80592c_breadcrumb.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\owner\836e4f2a-f170-4edf-a7ed-c5bb4e80592c_breadcrumb.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\AdminPanel\img\product\0424b39b-7e90-4ba0-8d3a-bbb9df15692c_yataq3.jfif))">
       <SourceType>Package</SourceType>
