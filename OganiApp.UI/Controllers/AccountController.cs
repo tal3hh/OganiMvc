@@ -238,5 +238,64 @@ namespace OganiApp.UI.Controllers
             return View();
         }
         #endregion
+
+
+        #region UpdateUser
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Update()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user == null) return NotFound();
+
+            var model = new UserUpdateDto();
+
+            model.UserName = user.UserName;
+            model.Email = user.Email;
+            model.CurrentPassword = user.PasswordHash;
+
+			return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(UserUpdateDto dto)
+        {
+            if (!ModelState.IsValid) return View(dto);
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user == null) return NotFound();
+
+            user.UserName = dto.UserName;
+            user.Email = dto.Email;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View(dto);
+            }
+
+            if (!string.IsNullOrWhiteSpace(dto.NewPassword))
+            {
+                result = await _userManager.ChangePasswordAsync(user, dto.CurrentPassword, dto.NewPassword);
+
+                if (!result.Succeeded)
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                    return View(dto);
+                }
+            }
+
+            await _signInManager.SignInAsync(user, true);
+            return RedirectToAction("HomePage", "Home");
+        }
+        #endregion
+
     }
 }

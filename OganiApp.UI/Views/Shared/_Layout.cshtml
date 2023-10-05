@@ -97,8 +97,10 @@
 
                                         @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin"))
                                         {
-                                            <a asp-action="Index" asp-controller="Dashboard" asp-area="AdminPanel"><i style="font-size:21px;color:black;" class="bi bi-person-square"></i></a>
+                                            <a asp-action="Index" asp-controller="Dashboard" asp-area="AdminPanel"><i style="font-size:21px;color:black;" class="bi bi-house-door"></i></a>
                                         }
+
+                                        <a asp-action="Update" asp-controller="Account" asp-area=""><i style="font-size:22px;color:black;" class="bi bi-person-bounding-box"></i></a>
 
                                         <a asp-action="Logout" asp-controller="Account"><i style="font-size:22px;color:black;" class="bi bi-box-arrow-right"></i></a>
 
