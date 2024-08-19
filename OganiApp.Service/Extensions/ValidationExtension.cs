@@ -1,13 +1,9 @@
 ﻿using FluentValidation;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using OganiApp.Core.Entities;
 using OganiApp.Service.FluentValidations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OganiApp.Service.Models.Account;
+
 
 namespace OganiApp.Service.Extensions
 {
@@ -26,6 +22,8 @@ namespace OganiApp.Service.Extensions
             services.AddScoped<IValidator<Comment>, CommentValidation>();
             services.AddScoped<IValidator<Advert>, AdvertValidation>();
             services.AddScoped<IValidator<Contact>, ContactValidation>();
+
+            services.AddScoped<IValidator<UserCreateDto>, UserCreateDtoValidator>();
         }
     }
 }

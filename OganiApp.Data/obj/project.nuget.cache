@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NrfyuQUytz9DZ3b8o9/CexSFyib/PR+pqBOYtd1eOsWLLiSf7Haj/W0gnQ/Tq637TdbIpT2YD8pllaHaSH5Z5g==",
+  "dgSpecHash": "1m6VzDxps0aAbkpo4AqSRFIPaV6p5VDrQQQoYo+u71J0h12CBkkCbQmHqRHVmkhsY75DN16ApMCpSI6LwZJqiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

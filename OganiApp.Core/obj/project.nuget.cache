@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q1xByVhkbL7vf/szKktpoQPYPx/Rn41H/Ii9fmJdfAsXmByysaVQKsQcneHIH8Wzu/ToLE6lE8JkYllrd/yB8g==",
+  "dgSpecHash": "yn/ot204gfmpRl67u+s6B1jbeOu3+zsIDuB0uY7VLJWcTOiJOsYIbDo6vp3Upq7UOo/FFNV9n+/DAZkxLa0BrQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\OganiApp.Core.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\OganiApp.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

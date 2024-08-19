@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ertRyh8w2int+wDbJCIuHc9b2BhAN091l7+ElxbSn0hKY2ZrUcT+69ln5qOW10VzLW7fmf5LB/LVTiOo9gw3w==",
+  "dgSpecHash": "cqgPsic5AWGsl9px+q1YbOHGI7yJtEMVDFkVL5mPKmTa+kej43BPTXDqRhBSISND/iJN/A503EQVwX4tNKgQKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\OganiApp.Service.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\OganiApp.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",

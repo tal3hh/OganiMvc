@@ -12,3 +12,17 @@ C:\Users\HP\Desktop\C#\PROJE\P125\OganiApp\OganiApp.Core\obj\Debug\net6.0\refint
 C:\Users\HP\Desktop\C#\PROJE\P125\OganiApp\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.pdb
 C:\Users\HP\Desktop\C#\PROJE\P125\OganiApp\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.genruntimeconfig.cache
 C:\Users\HP\Desktop\C#\PROJE\P125\OganiApp\OganiApp.Core\obj\Debug\net6.0\ref\OganiApp.Core.dll
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\bin\Debug\net6.0\OganiApp.Core.deps.json
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\bin\Debug\net6.0\OganiApp.Core.runtimeconfig.json
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\bin\Debug\net6.0\OganiApp.Core.dll
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\bin\Debug\net6.0\OganiApp.Core.pdb
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.AssemblyInfo.cs
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.dll
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\refint\OganiApp.Core.dll
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.pdb
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\OganiApp.Core.genruntimeconfig.cache
+C:\Users\HP\Desktop\asda\OganiProject\OganiApp.Core\obj\Debug\net6.0\ref\OganiApp.Core.dll

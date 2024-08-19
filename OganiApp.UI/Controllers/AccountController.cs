@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using OganiApp.Core.Entities;
 using OganiApp.Service.Models.Account;
 using OganiApp.Service.Services.Interface;
@@ -40,8 +39,6 @@ namespace OganiApp.UI.Controllers
             //Validation
             if (!ModelState.IsValid) return View(dto);
 
-
-
             var user = new AppUser()
             {
                 UserName = dto.Username,
@@ -54,9 +51,9 @@ namespace OganiApp.UI.Controllers
             {
                 await _roleManager.CreateAsync(new AppRole
                 {
-                    Name = "SuperAdmin"
+                    Name = "Admin"
                 });
-                await _userManager.AddToRoleAsync(user, "SuperAdmin");
+                await _userManager.AddToRoleAsync(user, "Admin");
 
                 var appUser = await _userManager.FindByEmailAsync(dto.Email);
                 if (appUser == null) return View(dto);

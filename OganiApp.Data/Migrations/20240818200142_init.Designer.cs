@@ -12,8 +12,8 @@ using OganiApp.Data.Contexts;
 namespace OganiApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230914102053_BasketAndFav")]
-    partial class BasketAndFav
+    [Migration("20240818200142_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -443,8 +443,14 @@ namespace OganiApp.Data.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ModifatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OpenTime")
                         .HasColumnType("nvarchar(max)");

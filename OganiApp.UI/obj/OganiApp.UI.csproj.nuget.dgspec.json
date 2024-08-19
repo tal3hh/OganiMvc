@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.UI\\OganiApp.UI.csproj": {}
+    "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.UI\\OganiApp.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\OganiApp.Core.csproj": {
+    "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\OganiApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\OganiApp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\OganiApp.Core.csproj",
         "projectName": "OganiApp.Core",
-        "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\OganiApp.Core.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\OganiApp.Core.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -88,14 +88,14 @@
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj": {
+    "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj",
         "projectName": "OganiApp.Data",
-        "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -117,8 +117,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\OganiApp.Core.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Core\\OganiApp.Core.csproj"
+              "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\OganiApp.Core.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Core\\OganiApp.Core.csproj"
               }
             }
           }
@@ -152,14 +152,14 @@
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\OganiApp.Service.csproj": {
+    "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\OganiApp.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\OganiApp.Service.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\OganiApp.Service.csproj",
         "projectName": "OganiApp.Service",
-        "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\OganiApp.Service.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\OganiApp.Service.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -181,8 +181,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj"
+              "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj"
               }
             }
           }
@@ -234,14 +234,14 @@
         }
       }
     },
-    "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.UI\\OganiApp.UI.csproj": {
+    "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.UI\\OganiApp.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.UI\\OganiApp.UI.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.UI\\OganiApp.UI.csproj",
         "projectName": "OganiApp.UI",
-        "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.UI\\OganiApp.UI.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.UI\\OganiApp.UI.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.UI\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -263,11 +263,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Data\\OganiApp.Data.csproj"
+              "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Data\\OganiApp.Data.csproj"
               },
-              "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\OganiApp.Service.csproj": {
-                "projectPath": "C:\\Users\\HP\\Desktop\\C#\\PROJE\\P125\\OganiApp\\OganiApp.Service\\OganiApp.Service.csproj"
+              "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\OganiApp.Service.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\asda\\OganiProject\\OganiApp.Service\\OganiApp.Service.csproj"
               }
             }
           }

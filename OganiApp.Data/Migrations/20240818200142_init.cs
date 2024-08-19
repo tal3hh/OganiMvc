@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OganiApp.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -91,6 +91,8 @@ namespace OganiApp.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OpenTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -223,6 +225,57 @@ namespace OganiApp.Data.Migrations
                     table.ForeignKey(
                         name: "FK_AspNetUserTokens_AspNetUsers_UserId",
                         column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Baskets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
+                    AppUserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Baskets", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Baskets_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Favorites",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    AppUserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Favorites", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Favorites_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -393,6 +446,11 @@ namespace OganiApp.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Baskets_AppUserId",
+                table: "Baskets",
+                column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_BlogDetails_BlogId",
                 table: "BlogDetails",
                 column: "BlogId",
@@ -401,13 +459,17 @@ namespace OganiApp.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Blogs_OwnerId",
                 table: "Blogs",
-                column: "OwnerId",
-                unique: true);
+                column: "OwnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_ProductId",
                 table: "Comments",
                 column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Favorites_AppUserId",
+                table: "Favorites",
+                column: "AppUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductDetails_ProductId",
@@ -442,6 +504,9 @@ namespace OganiApp.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Baskets");
+
+            migrationBuilder.DropTable(
                 name: "BlogDetails");
 
             migrationBuilder.DropTable(
@@ -451,16 +516,19 @@ namespace OganiApp.Data.Migrations
                 name: "Contacts");
 
             migrationBuilder.DropTable(
+                name: "Favorites");
+
+            migrationBuilder.DropTable(
                 name: "ProductDetails");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Blogs");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Products");

@@ -27,9 +27,9 @@ builder.Services.AddAuthorization();
 builder.Services.AddIdentity<AppUser, AppRole>(opt =>
 {
     opt.Password.RequireNonAlphanumeric = false;  //Simvollardan biri olmalidir(@,/,$) 
-    opt.Password.RequireLowercase = true;       //Mutleq Kicik herf
-    opt.Password.RequireUppercase = true;       //Mutleq Boyuk herf 
-    opt.Password.RequiredLength = 4;            //Min. simvol sayi
+    opt.Password.RequireLowercase = true;         //Mutleq Kicik herf
+    opt.Password.RequireUppercase = true;         //Mutleq Boyuk herf 
+    opt.Password.RequiredLength = 4;              //Min. simvol sayi
     opt.Password.RequireDigit = false;
 
     opt.User.RequireUniqueEmail = true;
